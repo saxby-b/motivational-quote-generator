@@ -36,6 +36,12 @@ h1 {
   text-align: center;
 }
 
+.m-quotes {
+  width: 100%;
+  text-align: center;
+
+}
+
 button {
   border-radius: 50%;
   padding: 10px;
