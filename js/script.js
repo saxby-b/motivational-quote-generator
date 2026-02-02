@@ -1,4 +1,4 @@
-let numberTrivia = document.querySelector(".number-trivia");
+let pQuote = document.querySelector(".m-quotes");
 const quoteButton = document.querySelector(".quote");
 const finishButton = document.querySelector(".finish");
 const change = document.querySelector(".change span");
@@ -24,9 +24,13 @@ const selectRandomQuote = function(quotes) {
 const displayQuote = function(randomQuote) {
   const quote = randomQuote.quote;
   const author = randomQuote.author;
+  pQuote.classList.remove("hide");
+  pQuote.innerHTML = `${quote} <br> ${author}`;
 }
 
-quoteButton.addEventListener("click", fetchMotivationalQuote);
+quoteButton.addEventListener("click", function() {
+  fetchMotivationalQuote();
+});
 
 let d = new Date();
 let year = d.getFullYear();
