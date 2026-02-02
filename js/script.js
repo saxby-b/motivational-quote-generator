@@ -7,11 +7,24 @@ let li = document.createElement("li");
 
 const fetchMotivationalQuote = async function () {
   let res = await fetch(
-    "https://motivational-spark-api.vercel.app/api/quotes/random/10",
+    "https://motivational-spark-api.vercel.app/api/quotes/random/3",
   );
-  let trivia = await res.json();
-  console.log(trivia);
+  let quotes = await res.json();
+  console.log(quotes);
+  selectRandomQuote(quotes);
 };
+
+const selectRandomQuote = function(quotes) {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const randomQuote = quotes[randomIndex];
+  console.log(randomQuote);
+  displayQuote(randomQuote);
+}
+
+const displayQuote = function(randomQuote) {
+  const quote = randomQuote.quote;
+  const author = randomQuote.author;
+}
 
 quoteButton.addEventListener("click", fetchMotivationalQuote);
 
