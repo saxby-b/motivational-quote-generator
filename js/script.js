@@ -14,21 +14,21 @@ const fetchMotivationalQuote = async function () {
   selectRandomQuote(quotes);
 };
 
-const selectRandomQuote = function(quotes) {
+const selectRandomQuote = function (quotes) {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const randomQuote = quotes[randomIndex];
   console.log(randomQuote);
   displayQuote(randomQuote);
 }
 
-const displayQuote = function(randomQuote) {
+const displayQuote = function (randomQuote) {
   const quote = randomQuote.quote;
   const author = randomQuote.author;
   pQuote.classList.remove("hide");
   pQuote.innerHTML = `${quote} <br> ${author}`;
 }
 
-quoteButton.addEventListener("click", function() {
+quoteButton.addEventListener("click", function () {
   fetchMotivationalQuote();
 });
 
